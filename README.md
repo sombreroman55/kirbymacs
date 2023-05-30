@@ -1,0 +1,2 @@
+# kirbymacs
+ Kirbymacs configuration
