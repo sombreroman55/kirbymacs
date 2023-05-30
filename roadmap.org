@@ -1,0 +1,97 @@
+* Kirbymacs
+Kirbymacs is my own Emacs configuration, inspired by Doom Emacs but with a different favorite video
+game in mind. It borrows heavily from the ideas of Doom Emacs, but changes some of the keybindings
+to be more intuitive for me and is built from the ground up by me so I know each part of it. The
+following sections outline the tasks and features I would like Kirbymacs to have.
+
+** The Intangibles
+I suppose a configuration based around a character who can adapt and copy others' powers should
+itself be flexible and be able to copy other features
+
+** Color Themes
+I want Kirbymacs to have a few themees based around Kirby characters, like Kirby, Meta Knight, and
+King Dedede, and maybe some others. I will probably steal the Doom themes wholesale though to give
+myself the largest list to choose from. So far I have yet to find a theme I like more than gruvbox,
+but maybe if I make it myself?
+
+Theme ideas:
+- Kirby
+- Meta Knight
+- King Dedede
+- Frost
+- Plasma
+- Caps (Bomb, Sword, Mirror, Beam, etc.)
+
+** Kirby Animations
+I want Kirbymacs to display little Kirby animations in the modeline or the header area, similar to
+Bisqwit's walking Mario. These would play at random times, every now and then as a little easter
+egg. I would like there to be several of these (maybe 2-4 to start, but more is always better,
+right?)that are selected randomly to play.
+
+** Evil Keybindings
+I use vim keybindings. I tried Emacs vanilla, but I'm too old to change now. I love vim keybindings.
+
+** Leader Key Space keybindings
+I really like Doom (and Spacemacs too) using the Spacebar as the leader key to drop into all of our
+user-defined keys.
+
+** LSPs and DAPs
+I'd like to use Kirbymacs for development (and for everything else too :P) so I will need a good
+setup to have things that I am used to and like in Neovim like LSPs and such.
+
+** Org-mode Workflow
+My goal is to completely hand over my life to org-mode and run it from there. We will need to ponder
+on what that looks like in practice and detail our desired workflow and how to accomplish it here later.
+
+** Org-roam Workflow
+I would also like to start taking notes in the zettelkasten form, creating networks of notes and
+informational nodes. Being able to do this quickly and effectively is an important goal of Kirbymacs.
+
+** Packages to Use
+Doom Emacs uses a lot of packages. I don't know what the majority of them do yet, but they all seem
+to contribute to the overall experience. I will use some packages too, but how many and for what I
+don't really know yet. For now I will list the ones I know that I want, along with ones that I want
+to investigate more to see if they fit my goals.
+
+Packages I want:
+- magit
+- evil-mode
+- evil-collection
+- org-mode
+- org-roam
+
+Packages to investigate:
+- lsp-mode
+- dap-mode
+- company-mode vs. corfu
+
+** Work vs. Life
+I want to use Kirbymacs for both work and for personal life, but there are things that are not
+common between the two that would need to be configured based on where I am using Kirbymacs, or at
+least kept in mind when creating our configurations and keybindings. I use multiple machines daily
+so keeping things in sync while also tailored to my specific uses of those machines will be tricky
+design challenge to solve.
+
+** Project Organization
+Other "distros" have seemingly sophisticated organization of their configurations. I would like to
+study and steal some of those ideas to keep things modular and make development and usage of
+Kirbymacs easy and only pulling in what you want/need when you want or need it (though since this is
+for me, there is presumably contexts for which everything will be used at some point).
+
+** Project Goals (and non-goals)
+*** Goals
+Marry my many years of vim configuration and muscle memory with the joy of programming in Emacs
+Lisp and the killer features of Emacs (namely Org-mode) to create a truly custom and personalized
+environment for all of my computing needs.
+
+I would like my decisions and set up to be well-documented, mostly for myself so I don't have to
+keep all of this in my head, but also to help any other people out there like me who have agonized
+over the things that I have been for years and am trying to solve now. If I can save someone else
+all that time that would be a big win.
+
+*** Non-Goals
+This is primarily an Emacs configuration for /me/, built with only me in mind. I don't particularly
+care (at this time) for making it configurable or tweakable any more than it would be
+naturally. Maybe later when it is further along and more mature I will begin to think about making
+it more of a "public" distro like Doom, but that won't be for a very long time, if ever. Isn't the
+joy and power of Emacs making it your own anyway?
