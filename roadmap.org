@@ -6,21 +6,39 @@ following sections outline the tasks and features I would like Kirbymacs to have
 
 ** The Intangibles
 I suppose a configuration based around a character who can adapt and copy others' powers should
-itself be flexible and be able to copy other features
+itself be flexible and be able to copy other features, but I don't plan on tying myself to that
+concept to tightly, since a lot of it doesn't carry over.
 
-** Color Themes
+** Kirby Dashboard
+Pretty much the Doom Emacs dashboard but with Kirby. Maybe some different hotlinks in the main
+menu. Splash images should switch based on the configured theme, though should be able to be
+overridden.
+
+*** TODO Look into how to make a custom Emacs dashboard
+
+** Kirby Color Themes
 I want Kirbymacs to have a few themees based around Kirby characters, like Kirby, Meta Knight, and
 King Dedede, and maybe some others. I will probably steal the Doom themes wholesale though to give
 myself the largest list to choose from. So far I have yet to find a theme I like more than gruvbox,
 but maybe if I make it myself?
 
 Theme ideas:
-- Kirby
+- Kirby (different games)
+  - Dream Land 1/2
+  - Dream Land 3
+  - Super Star (Ultra)
+  - Adventure
+  - Amazing Mirror
 - Meta Knight
 - King Dedede
 - Frost
 - Plasma
 - Caps (Bomb, Sword, Mirror, Beam, etc.)
+- Bosses (Kracko, Whispy Woods, Dark Matter, Zero, etc.)
+- Minibosses (some might be "iconic" enough to warrant their own standalone)
+- Enemies (some might be "iconic" enough to warrant their own standalone)
+
+*** TODO Look into how to make Emacs color themes
 
 ** Kirby Animations
 I want Kirbymacs to display little Kirby animations in the modeline or the header area, similar to
@@ -28,8 +46,26 @@ Bisqwit's walking Mario. These would play at random times, every now and then as
 egg. I would like there to be several of these (maybe 2-4 to start, but more is always better,
 right?)that are selected randomly to play.
 
+Another fun thing would be to make some Kirby-themed language logos for each language and put them
+in the mode line when in that major mode. We could have a small Kirby animation play when entering
+some major mode. Animating in the mode line seems a bit tricky, or at the very least tedious (maybe
+a separate package idea?) It also seems to be a bit resource hungry, so maybe this stuff is an
+opt-in feature for users.
+
+*** TODO Look into how to make a mode-line animation (consult [[https://github.com/TeMPOraL/nyan-mode][nyan-mode]])
+
+** Kirby Icons
+It could be fun to make a little Kirby sprite or a "copy ability" icon for the different programming
+languages that could appear in the mode line for a given language. This obviously could balloon out
+into pretty much anything you could make an icon for in the mode line.
+
+*** TODO Look into how to make a mode-line icon
+*** TODO Look into mode line customization
+
 ** Evil Keybindings
-I use vim keybindings. I tried Emacs vanilla, but I'm too old to change now. I love vim keybindings.
+I use vim keybindings. I tried Emacs vanilla, but I'm too old to change now. I love vim
+keybindings. Kirbymacs will be an evil configuration. I don't plan on accomodating a non-evil setup
+at the moment.
 
 ** Leader Key Space keybindings
 I really like Doom (and Spacemacs too) using the Spacebar as the leader key to drop into all of our
@@ -83,6 +119,10 @@ for me, there is presumably contexts for which everything will be used at some p
 Marry my many years of vim configuration and muscle memory with the joy of programming in Emacs
 Lisp and the killer features of Emacs (namely Org-mode) to create a truly custom and personalized
 environment for all of my computing needs.
+
+I want to take this opportunity to learn Emacs Lisp really well as well. I have enjoyed programming
+in Emacs Lisp greatly so far but I feel like I don't know it all that well so this will hopefully
+give me the chance to learn it better.
 
 I would like my decisions and set up to be well-documented, mostly for myself so I don't have to
 keep all of this in my head, but also to help any other people out there like me who have agonized
