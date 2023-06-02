@@ -9,3 +9,8 @@
 
 # Undo-tree save-files
 *.~undo-tree
+
+straight/
+var/
+etc/
+auto-save-list/
