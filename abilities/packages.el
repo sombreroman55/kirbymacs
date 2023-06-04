@@ -16,7 +16,7 @@
 
 (setq straight-use-package-by-default t)
 
-(use-package command-log-mode)
+(use-package rainbow-mode)
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 (use-package which-key

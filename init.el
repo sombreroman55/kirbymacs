@@ -1,15 +1,16 @@
 (message "Hello from Kirbymacs!")
 
-(setq confirm-kill-emacs #'yes-or-no-p)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 ;; Make sure these are in the proper order
-(setq droomacs-files '("abilities/packages.el"
-		       "abilities/broom.el"
-		       "abilities/ui.el"
-		       "abilities/evil.el"
-		       "abilities/magit.el"
-		       "abilities/org.el"
-		       "abilities/roam.el"))
+(setq kirbymacs-files '("abilities/packages.el"
+			"abilities/broom.el"
+			"abilities/ui.el"
+			"abilities/lsp.el"
+			"abilities/magit.el"
+			"abilities/org.el"
+			"abilities/roam.el"
+			"abilities/evil.el"))
 
-(dolist (config-file droomacs-files)
+(dolist (config-file kirbymacs-files)
   (load-file (expand-file-name config-file user-emacs-directory)))
