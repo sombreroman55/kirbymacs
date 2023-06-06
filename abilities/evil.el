@@ -16,8 +16,6 @@
   (evil-set-initial-state 'messages-buffer-mode 'normal)
   (evil-set-initial-state 'dashboard-mode 'normal))
 
-(local-set-key [remap evil-save-and-close] 'evil-save-and-close)
-
 (use-package evil-collection
   :after evil
   :config
@@ -30,7 +28,7 @@
       (evil-mode -1)
     (evil-mode 1)))
 
-(global-set-key (kbd "<f5>") 'toggle-evil-mode)
+(global-set-key (kbd "<f11>") 'toggle-evil-mode)
 
 (use-package evil-escape
   :straight t
@@ -39,3 +37,8 @@
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.3)
   (evil-escape-mode))
+
+(define-key evil-visual-state-map (kbd "J") (concat ":m '>+1" (kbd "RET") "gv=gv"))
+(define-key evil-visual-state-map (kbd "K") (concat ":m '<-2" (kbd "RET") "gv=gv"))
+;; (define-key evil-normal-state-map (kbd "S-j") (concat ":m +1" (kbd "RET") "=="))
+;; (define-key evil-normal-state-map (kbd "S-k") (concat ":m -2" (kbd "RET") "=="))

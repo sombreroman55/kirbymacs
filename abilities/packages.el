@@ -13,17 +13,4 @@
   (load bootstrap-file nil 'nomessage))
 
 (straight-use-package 'use-package)
-
 (setq straight-use-package-by-default t)
-
-(use-package rainbow-mode)
-(use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
-(use-package which-key
-  :init (which-key-mode)
-  :diminish which-key-mode
-  :config
-  (setq which-key-idle-delay 0.4))
-(use-package all-the-icons)
-(use-package eterm-256color
-  :hook (term-mode . eterm-256color-mode))

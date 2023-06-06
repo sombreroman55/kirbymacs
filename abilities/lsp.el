@@ -1,8 +1,9 @@
 ;; Install and configure LSP-related packages
 (use-package lsp-mode
   :ensure t
-  :hook (c-mode c++-mode)
-  :commands lsp)
+  :commands lsp
+  :config
+  (setq lsp-prefer-flymake nil)) ; Use lsp-ui and flycheck instead of flymake
 
 (use-package lsp-ui
   :ensure t
@@ -35,7 +36,10 @@
   :hook (prog-mode . company-mode)
   :config
   (setq company-minimum-prefix-length 1
-        company-idle-delay 0.0))
+        company-idle-delay 0.0)
+  :bind (:map company-active-map
+              ("<tab>" . company-select-next)
+              ("<backtab>" . company-select-previous)))
 
 ;; Bind keys for useful functionality
 (use-package general
@@ -59,10 +63,12 @@
    "g" '(magit-status :which-key "git status")
    "h" '(lsp-describe-thing-at-point :which-key "help")))
 
-;; Additional configurations specific to C/C++ development
-(defun kirby/c++-mode-hook ()
-  ;; Set specific options for C++ mode
-  (setq c++-tab-always-indent t
-        c-basic-offset 4))
+(defun kirby/add-lsp-hooks (mode-hook)
+  (add-hook mode-hook #'lsp)
+  (add-hook mode-hook #'company-mode))
 
-(add-hook 'c++-mode-hook 'kirby/c++-mode-hook)
+;; Add language hooks below (see ./langs for language-specific configurations)
+(kirby/add-lsp-hooks 'c-mode-common-hook)
+
+(dolist (lang-file (directory-files "~/editors/kirbymacs/abilities/langs" t "\\.el\\'" nil))
+	(load-file (expand-file-name lang-file user-emacs-directory)))
