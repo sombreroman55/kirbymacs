@@ -3,11 +3,11 @@
 (setq context (cond ((string-equal system-name "culex") "home")
 		    ((string-equal system-name "gunyolk") "work")))
 
-(add-to-list 'load-path "~/.emacs.d/abilities")
+(add-to-list 'load-path (expand-file-name "abilities" user-emacs-directory))
 
 (require 'kirby-packages)
 (require 'kirby-broom)
-(require 'kirby-keybindings)
+(require 'kirby-keybinds)
 (require 'kirby-completion)
 (require 'kirby-ui)
 (require 'kirby-lsp)

@@ -4,4 +4,4 @@
 
 (add-hook 'c-mode-common-hook 'kirby/c-mode-common-hook)
 
-(provide 'kirby-lang-c)
+(provide 'kirby-lang-c-common)

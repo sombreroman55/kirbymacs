@@ -71,6 +71,6 @@
 (kirby/add-lsp-hooks 'c-mode-common-hook)
 
 (add-to-list 'load-path "~/.emacs.d/abilities/langs")
-(require 'kirby-lang-c)
+(require 'kirby-lang-c-common)
 
 (provide 'kirby-lsp)
