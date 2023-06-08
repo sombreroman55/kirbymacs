@@ -70,5 +70,7 @@
 ;; Add language hooks below (see ./langs for language-specific configurations)
 (kirby/add-lsp-hooks 'c-mode-common-hook)
 
-(dolist (lang-file (directory-files "~/editors/kirbymacs/abilities/langs" t "\\.el\\'" nil))
-	(load-file (expand-file-name lang-file user-emacs-directory)))
+(add-to-list 'load-path "~/.emacs.d/abilities/langs")
+(require 'kirby-lang-c)
+
+(provide 'kirby-lsp)

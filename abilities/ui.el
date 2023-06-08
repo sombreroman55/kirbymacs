@@ -45,3 +45,5 @@
 		shell-mode-hook
 		eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
+
+(provide 'kirby-ui)

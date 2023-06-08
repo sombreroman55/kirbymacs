@@ -18,3 +18,9 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 (add-hook 'org-mode-hook (lambda() (setq fill-column 100)))
+
+;; TODO: Create capture templates
+
+;; TODO: Create custom agenda views
+
+(provide 'kirby-org)

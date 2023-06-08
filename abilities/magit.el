@@ -2,3 +2,5 @@
 (use-package magit
   :straight t
   :commands (magit-status))
+
+(provide 'kirby-magit)

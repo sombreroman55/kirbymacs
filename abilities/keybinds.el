@@ -6,13 +6,16 @@
   (setq which-key-idle-delay 0.3))
 
 (use-package general
-  :ensure t
-  :config
-  (general-define-key
-   :states '(normal visual insert emacs)
-   :prefix "SPC"
-   :non-normal-prefix "C-SPC"
-   "fe" '(treemacs :which-key "toggle treemacs")
-   "eb" '(eval-buffer :which-key "eval buffer")
-   )
-  )
+  :ensure t)
+
+;; GLobal keybindings
+(general-define-key
+ :states '(normal visual insert emacs)
+ :keymaps 'override
+ :prefix "SPC"
+ :non-normal-prefix "C-SPC"
+ "f e" '(treemacs :which-key "toggle treemacs")
+ "e k" '((lambda () (interactive) (find-file "~/.emacs.d/init.el")) :which-key "edit kirbymacs config")
+ )
+
+(provide 'kirby-keybinds)

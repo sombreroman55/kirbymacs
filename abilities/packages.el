@@ -14,3 +14,5 @@
 
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
+
+(provide 'kirby-packages)

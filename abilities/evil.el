@@ -42,3 +42,5 @@
 (define-key evil-visual-state-map (kbd "K") (concat ":m '<-2" (kbd "RET") "gv=gv"))
 ;; (define-key evil-normal-state-map (kbd "S-j") (concat ":m +1" (kbd "RET") "=="))
 ;; (define-key evil-normal-state-map (kbd "S-k") (concat ":m -2" (kbd "RET") "=="))
+
+(provide 'kirby-evil)
