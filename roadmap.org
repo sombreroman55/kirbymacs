@@ -33,6 +33,7 @@ some major mode. Animating in the mode line seems a bit tricky, or at the very l
 a separate package idea?) It also seems to be a bit resource hungry, so maybe this stuff is an
 opt-in feature for users.
 
+*** TODO Maybe make this its own project
 *** TODO Look into how to make a mode-line animation (consult [[https://github.com/TeMPOraL/nyan-mode][nyan-mode]])
 
 ** Kirby Icons
@@ -95,8 +96,8 @@ study and steal some of those ideas to keep things modular and make development 
 Kirbymacs easy and only pulling in what you want/need when you want or need it (though since this is
 for me, there is presumably contexts for which everything will be used at some point).
 
-There are many who also dump everything into one big org file, which maybe we could do also. I
-haven't decided yet.
+There are also many who dump everything into one big org file, which may be better if this config is
+just for us. I haven't decided yet.
 
 ** Project Goals (and non-goals)
 *** Goals

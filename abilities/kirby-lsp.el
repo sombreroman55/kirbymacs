@@ -1,4 +1,35 @@
-;; Install and configure LSP-related packages
+;; kirby-lsp.el --- Initialize Kirbymacs LSP configurations.	-*- lexical-binding: t -*-
+
+;; Copyright (C) 2023-2023 Andrew Roberts
+
+;; Author: Andrew Roberts <sombreroman55@gmail.com>
+;; URL: https://github.com/sombreroman55/kirbymacs
+
+;; This file is not part of GNU Emacs.
+;;
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by the Free Software Foundation; either version 3, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program; see the file COPYING.  If not, write to
+;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth
+;; Floor, Boston, MA 02110-1301, USA.
+;;
+
+;;; Commentary:
+;;
+;; Kirbymacs LSP configuration.
+;;
+
+;;; Code:
+
 (use-package lsp-mode
   :ensure t
   :commands lsp
@@ -63,14 +94,11 @@
    "g" '(magit-status :which-key "git status")
    "h" '(lsp-describe-thing-at-point :which-key "help")))
 
-(defun kirby/add-lsp-hooks (mode-hook)
-  (add-hook mode-hook #'lsp)
-  (add-hook mode-hook #'company-mode))
-
-;; Add language hooks below (see ./langs for language-specific configurations)
-(kirby/add-lsp-hooks 'c-mode-common-hook)
-
 (add-to-list 'load-path "~/.emacs.d/abilities/langs")
+
+;; Require the languages you want here below
 (require 'kirby-lang-c-common)
 
 (provide 'kirby-lsp)
+
+;;; kirby-lsp.el ends here
