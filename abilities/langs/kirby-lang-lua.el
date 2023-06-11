@@ -1,4 +1,4 @@
-;; kirby-lang-c-common.el --- Configure common C settings.	-*- lexical-binding: t -*-
+;; kirby-lang-lua.el --- Configure common C settings.	-*- lexical-binding: t -*-
 
 ;; Copyright (C) 2023-2023 Andrew Roberts
 
@@ -30,16 +30,16 @@
 
 ;;; Code:
 
-(defun kirby/c-mode-common-hook ()
+(require 'lsp-mode)
+(require 'company)
+(defun kirby/lua-mode-hook ()
   (setq c-tab-always-indent t
         c-basic-offset 4)
-  (require 'lsp-mode)
-  (require 'company)
-  (lsp-deferred)
-  (company-mode))
+  #'lsp-deferred
+  #'company-mode)
 
-(add-hook 'c-mode-common-hook 'kirby/c-mode-common-hook)
+(add-hook 'lua-mode-hook 'kirby/lua-mode-hook)
 
-(provide 'kirby-lang-c-common)
+(provide 'kirby-lang-lua)
 
-;;; kirby-lang-c-common.el ends here
+;;; kirby-lang-lua.el ends here

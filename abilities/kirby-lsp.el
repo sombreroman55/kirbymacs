@@ -98,6 +98,8 @@
 
 ;; Require the languages you want here below
 (require 'kirby-lang-c-common)
+(require 'kirby-lang-elisp)
+(require 'kirby-lang-lisp)
 
 (provide 'kirby-lsp)
 

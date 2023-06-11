@@ -1,4 +1,4 @@
-;; kirby-lang-c-common.el --- Configure common C settings.	-*- lexical-binding: t -*-
+;; kirby-lang-elisp.el --- Configure Emacs Lisp settings.	-*- lexical-binding: t -*-
 
 ;; Copyright (C) 2023-2023 Andrew Roberts
 
@@ -25,21 +25,17 @@
 
 ;;; Commentary:
 ;;
-;; Configure settings and hooks for all C common modes
+;; Configure settings and hooks for Emacs Lisp
 ;;
 
 ;;; Code:
 
-(defun kirby/c-mode-common-hook ()
-  (setq c-tab-always-indent t
-        c-basic-offset 4)
-  (require 'lsp-mode)
-  (require 'company)
-  (lsp-deferred)
-  (company-mode))
+(require 'company)
+(defun kirby/emacs-lisp-mode-hook ()
+  #'company-mode)
 
-(add-hook 'c-mode-common-hook 'kirby/c-mode-common-hook)
+(add-hook 'emacs-lisp-mode-hook 'kirby/emacs-lisp-mode-hook)
 
-(provide 'kirby-lang-c-common)
+(provide 'kirby-lang-elisp)
 
-;;; kirby-lang-c-common.el ends here
+;;; kirby-lang-elisp.el ends here

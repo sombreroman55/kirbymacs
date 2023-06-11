@@ -30,16 +30,18 @@
 
 ;;; Code:
 
-(defun kirby/c-mode-common-hook ()
-  (setq c-tab-always-indent t
-        c-basic-offset 4)
-  (require 'lsp-mode)
-  (require 'company)
-  (lsp-deferred)
-  (company-mode))
+(require 'lsp-mode)
+(require 'company)
 
-(add-hook 'c-mode-common-hook 'kirby/c-mode-common-hook)
+(defun kirby/lisp-hook ()
+  (setq inferior-lisp-program "/usr/bin/sbcl")
+  (add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
+  (require 'slime)
+  (slime-setup)
+  #'company-mode)
 
-(provide 'kirby-lang-c-common)
+(add-hook 'lisp-hook 'kirby/lisp-hook)
 
-;;; kirby-lang-c-common.el ends here
+(provide 'kirby-lang-lisp)
+
+;;; kirby-lang-lisp.el ends here

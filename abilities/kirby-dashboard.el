@@ -1,4 +1,4 @@
-;; kirby-lang-c-common.el --- Configure common C settings.	-*- lexical-binding: t -*-
+;; kirby-dashboard.el --- Initialize dashboard.	-*- lexical-binding: t -*-
 
 ;; Copyright (C) 2023-2023 Andrew Roberts
 
@@ -25,21 +25,22 @@
 
 ;;; Commentary:
 ;;
-;; Configure settings and hooks for all C common modes
+;; Sets up the main dashboard for Kirbymacs
 ;;
 
 ;;; Code:
 
-(defun kirby/c-mode-common-hook ()
-  (setq c-tab-always-indent t
-        c-basic-offset 4)
-  (require 'lsp-mode)
-  (require 'company)
-  (lsp-deferred)
-  (company-mode))
+;; TODO: Retheme this to be Kirby themed!
+;; TODO: Configure this to be more what we want
 
-(add-hook 'c-mode-common-hook 'kirby/c-mode-common-hook)
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
 
-(provide 'kirby-lang-c-common)
+(when (daemonp)
+  (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*"))))
 
-;;; kirby-lang-c-common.el ends here
+(provide 'kirby-dashboard)
+
+;;; kirby-dashboard.el ends here

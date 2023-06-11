@@ -19,7 +19,8 @@ Pretty much the Doom Emacs dashboard but with Kirby. Maybe some different hotlin
 menu. Splash images should switch based on the configured theme, though should be able to be
 overridden.
 
-*** TODO Look into how to make a custom Emacs dashboard
+*** DONE Look into how to make a custom Emacs dashboard
+*** TODO Make a custom Kirby-themed dashboard
 
 ** Kirby Animations
 I want Kirbymacs to display little Kirby animations in the modeline or the header area, similar to

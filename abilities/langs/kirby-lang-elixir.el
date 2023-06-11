@@ -1,4 +1,4 @@
-;; kirby-lang-c-common.el --- Configure common C settings.	-*- lexical-binding: t -*-
+;; kirby-lang-elixir.el --- Configure Elixir settings.	-*- lexical-binding: t -*-
 
 ;; Copyright (C) 2023-2023 Andrew Roberts
 
@@ -25,21 +25,16 @@
 
 ;;; Commentary:
 ;;
-;; Configure settings and hooks for all C common modes
+;; Configure settings and hooks for Elixir
 ;;
 
 ;;; Code:
 
-(defun kirby/c-mode-common-hook ()
-  (setq c-tab-always-indent t
-        c-basic-offset 4)
-  (require 'lsp-mode)
-  (require 'company)
-  (lsp-deferred)
-  (company-mode))
+(require 'lsp-mode)
+(require 'company)
 
-(add-hook 'c-mode-common-hook 'kirby/c-mode-common-hook)
+;; TODO
 
-(provide 'kirby-lang-c-common)
+(provide 'kirby-lang-elixir)
 
-;;; kirby-lang-c-common.el ends here
+;;; kirby-lang-elixir.el ends here

@@ -1,4 +1,4 @@
-;; kirby-lang-c-common.el --- Configure common C settings.	-*- lexical-binding: t -*-
+;; kirby-lang-crystal.el --- Configure Crystal settings.	-*- lexical-binding: t -*-
 
 ;; Copyright (C) 2023-2023 Andrew Roberts
 
@@ -25,21 +25,29 @@
 
 ;;; Commentary:
 ;;
-;; Configure settings and hooks for all C common modes
+;; Configure settings and hooks for Crystal
 ;;
 
 ;;; Code:
 
-(defun kirby/c-mode-common-hook ()
-  (setq c-tab-always-indent t
-        c-basic-offset 4)
+(use-package crystal-mode)
+(with-eval-after-load 'lsp-mode
+  (add-to-list 'lsp-language-id-configuration
+	       '(crystal-mode . "crystal"))
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection '("/home/droo/lsps/crystalline"))
+		    :activation-fn (lsp-activate-on "crystal")
+		    :priority '1
+		    :server-id 'crystalline)))
+
+(defun kirby/crystal-mode-hook ()
   (require 'lsp-mode)
   (require 'company)
   (lsp-deferred)
   (company-mode))
 
-(add-hook 'c-mode-common-hook 'kirby/c-mode-common-hook)
+(add-hook 'crystal-mode-hook 'kirby/crsytal-mode-hook)
 
-(provide 'kirby-lang-c-common)
+(provide 'kirby-lang-crystal)
 
-;;; kirby-lang-c-common.el ends here
+;;; kirby-lang-crystal.el ends here

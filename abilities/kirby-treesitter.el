@@ -1,4 +1,4 @@
-;; kirby-lang-c-common.el --- Configure common C settings.	-*- lexical-binding: t -*-
+;; kirby-treesitter.el --- Initialize Treesitter.	-*- lexical-binding: t -*-
 
 ;; Copyright (C) 2023-2023 Andrew Roberts
 
@@ -25,21 +25,20 @@
 
 ;;; Commentary:
 ;;
-;; Configure settings and hooks for all C common modes
+;; Sets up treesitter. Will be unnecessary once Emacs 29 is released
 ;;
 
 ;;; Code:
 
-(defun kirby/c-mode-common-hook ()
-  (setq c-tab-always-indent t
-        c-basic-offset 4)
-  (require 'lsp-mode)
-  (require 'company)
-  (lsp-deferred)
-  (company-mode))
+(straight-use-package 'tree-sitter)
+(straight-use-package 'tree-sitter-langs)
 
-(add-hook 'c-mode-common-hook 'kirby/c-mode-common-hook)
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
 
-(provide 'kirby-lang-c-common)
+(global-tree-sitter-mode)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
-;;; kirby-lang-c-common.el ends here
+(provide 'kirby-treesitter)
+
+;;; kirby-treesitter.el ends here

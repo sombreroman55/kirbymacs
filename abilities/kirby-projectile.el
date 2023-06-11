@@ -1,4 +1,4 @@
-;; kirby-lang-c-common.el --- Configure common C settings.	-*- lexical-binding: t -*-
+;; kirby-projectile.el --- Configure projectile.	-*- lexical-binding: t -*-
 
 ;; Copyright (C) 2023-2023 Andrew Roberts
 
@@ -25,21 +25,28 @@
 
 ;;; Commentary:
 ;;
-;; Configure settings and hooks for all C common modes
+;; Configure projectile and projectile-specific keybindings
 ;;
 
 ;;; Code:
 
-(defun kirby/c-mode-common-hook ()
-  (setq c-tab-always-indent t
-        c-basic-offset 4)
-  (require 'lsp-mode)
-  (require 'company)
-  (lsp-deferred)
-  (company-mode))
+(use-package projectile
+  :straight t
+  :init
+  (projectile-mode +1)
+  )
 
-(add-hook 'c-mode-common-hook 'kirby/c-mode-common-hook)
+;; TODO: Set up any desired keybindings
+(require 'general)
+;; Projectile keybindings
+(general-define-key
+ :states '(normal visual insert emacs)
+ :keymaps 'projectile-mode-map
+ :prefix "SPC"
+ :non-normal-prefix "C-SPC"
+ "p" 'projectile-command-map
+ )
 
-(provide 'kirby-lang-c-common)
+(provide 'kirby-projectile)
 
-;;; kirby-lang-c-common.el ends here
+;;; kirby-projectile.el ends here
