@@ -61,12 +61,14 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (defun kirby/set-font ()
-  (set-face-attribute 'default nil :font "JetBrainsMonoNL Nerd Font" :height 96))
+  (set-face-attribute 'default nil :font "JetBrainsMonoNL Nerd Font" :height 120))
 
 (if (daemonp)
     (add-hook 'server-after-make-frame-hook #'kirby/set-font)
   (kirby/set-font))
 
+(setq scroll-margin 5)
+(setq scroll-conservatively 100)
 (column-number-mode)
 (global-display-line-numbers-mode t)
 (setq fill-column 100)

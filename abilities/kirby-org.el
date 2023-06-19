@@ -33,6 +33,7 @@
 
 ;; Enable Org Mode
 (use-package org)
+(require 'org-tempo)
 
 ;; Set the default location for Org files
 (setq org-directory "~/orgmode")

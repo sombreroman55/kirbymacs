@@ -100,6 +100,7 @@
 (require 'kirby-lang-c-common)
 (require 'kirby-lang-elisp)
 (require 'kirby-lang-lisp)
+(require 'kirby-lang-python)
 
 (provide 'kirby-lsp)
 
